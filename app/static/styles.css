@@ -1,0 +1,22 @@
+/* styles.css */
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.left-panel, .right-panel {
+    flex: 1;
+    margin: 0 40px;
+}
+.left-panel {
+    padding-right: 15px;
+}
+.right-panel {
+    padding-left: 15px;
+}
+.brand-logo {
+    margin-left: 40px;
+}
+.hide-on-med-and-down {
+    margin-right: 40px;
+}
