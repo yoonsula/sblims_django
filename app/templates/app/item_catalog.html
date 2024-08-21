@@ -27,17 +27,23 @@
       <table id="equipment-table" class="display">
           <thead>
               <tr>
-                  <th>equip</th>
-                  <th>equip_num</th>
-                  <th>subname</th>
+                  <th>구분</th>
+                  <th>물품명</th>
+                  <th>브랜드</th>
+                  <th>optStock</th>
+                  <th>unitStock</th>
+                  <th>담당</th>
               </tr>
           </thead>
           <tbody>
-              {% for equipment in equipments %}
+              {% for item_catalog in item_catalogs %}
               <tr>
-                  <td>{{ equipment.equip }}</td>
-                  <td>{{ equipment.equip_num }}</td>
-                  <td>{{ equipment.subname }}</td>
+                  <td>{{ item_catalog.구분 }}</td>
+                  <td>{{ item_catalog.물품명 }}</td>
+                  <td>{{ item_catalog.브랜드 }}</td>
+                  <td>{{ item_catalog.optStock }}</td>
+                  <td>{{ item_catalog.unitStock }}</td>
+                  <td>{{ item_catalog.담당 }}</td>
               </tr>
               {% endfor %}
           </tbody>
