@@ -1,10 +1,13 @@
 {% extends 'app/home.html' %}
 
 {% block content %}
-    <h4>AI answer:</h4>
     <div class="card">
-        <div class="card-content">
-            <p>{{answer}}</p>
+        <div class="chat-container">
+            {% for message in chat_history %}
+                <div class="chat-message {% if message.user == 'You' %}user-message{% else %}gpt-message{% endif %}">
+                    <strong>{{ message.user }}</strong>: {{ message.text|safe }}
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

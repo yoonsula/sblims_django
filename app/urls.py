@@ -5,6 +5,7 @@ from .import views
 urlpatterns = [
     path('', views.home, name='home' ),
     path('answer', views.answer, name='answer'),
+    path('reset/', views.reset_session, name='reset_session'),
 ]
 
 urlpatterns += [

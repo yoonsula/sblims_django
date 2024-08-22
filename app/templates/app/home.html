@@ -23,17 +23,29 @@
             </div>
         </nav>
         <div class="container-flex">
-            <div class="left-panel">    
-                <h3 style="text-align: left;">GPT Model</h3>
-                <form action="{% url 'answer' %}" method="post">
-                    {% csrf_token %}
-                    <input type="text" name="question" placeholder="ask any question:">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">
-                        Submit
-                    </button>
-                </form>
-                {% block content %}
-                {% endblock %}
+            <div class="left-panel">
+                <h3 style="text-align: left;">AI Chatbot</h3>
+                {% comment %} GPT 대화창 {% endcomment %}
+                <div id="chat-window" class="chat-window">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+                
+                <!-- 사용자 입력 폼 -->
+                <div class="form-container">
+                    <!-- 사용자 입력 폼 -->
+                    <form action="{% url 'answer' %}" method="post" id="chat-form">
+                        {% csrf_token %}
+                        <div class="input-field">
+                            <input type="text" name="question" id="chat-input" placeholder="Ask anything..." autocomplete="off">
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    </form>
+                    <!-- Reset Session 버튼 -->
+                </div>
+                    <div class="reset-form">
+                        <a href="{% url 'reset_session' %}" class="btn red">Reset Session</a>
+                    </div>
             </div>
             <div class="right-panel">
                 <h3 style="text-align: left;">Markdown Editor</h3>
@@ -46,7 +58,7 @@
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
         <script>
             var simplemde = new SimpleMDE({ element: document.getElementById("Markdown-Editor") });
-            simplemde.codemirror.setSize(null, "650px");
+            simplemde.codemirror.setSize(null, "600px");
         </script>
     </body>
 </html>
