@@ -59,6 +59,8 @@
         <script>
             var simplemde = new SimpleMDE({ element: document.getElementById("Markdown-Editor") });
             simplemde.codemirror.setSize(null, "600px");
+            simplemde.codemirror.setOption('lineNumbers', true)
+            simplemde.codemirror.getWrapperElement().style.fontSize = '13px'
         </script>
     </body>
 </html>
