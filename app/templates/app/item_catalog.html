@@ -23,12 +23,15 @@
       </div>
     </nav>
     <div class="sidebar">
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'equipment_list' %}">Equipment List</a>
-        <a href="{% url 'item_catalog' %}">Item Catalog</a>
+        <a href="{% url 'item_catalog' %}">재고현황</a>
+        <a href="{% url 'item_catalog' %}">구매요청현황</a>
+        <a href="{% url 'item_catalog' %}">입출고 현황</a>
     </div>
     <div class="content">
-      <h1>Item Catalog</h1>
+      <h4>실험설계 마크다운</h4>  
+      <input type='file' accept='image/jpg,image/png,image/jpeg,image/gif' id='profile_img_upload'/>
+      <label for='profile_img_upload'><i class="far fa-file-image"/>&nbsp;파일 선택</label>
+      <h4>Item Catalog</h4>
       <table id="equipment-table" class="display">
           <thead>
               <tr>
@@ -38,6 +41,7 @@
                   <th>optStock</th>
                   <th>unitStock</th>
                   <th>담당</th>
+                  <th>작업</th>
               </tr>
           </thead>
           <tbody>
@@ -49,6 +53,11 @@
                   <td>{{ item_catalog.optStock }}</td>
                   <td>{{ item_catalog.unitStock }}</td>
                   <td>{{ item_catalog.담당 }}</td>
+                  <td>
+                    <button>구매요청</button>
+                    <button>변경</button>
+                    <button>삭제</button>
+                  </td>
               </tr>
               {% endfor %}
           </tbody>
